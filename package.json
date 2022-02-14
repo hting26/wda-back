@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "cloudinary": "^1.28.1",
+    "cloudinary-core": "^2.12.3",
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
