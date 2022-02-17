@@ -32,7 +32,7 @@ export const getAllDogs = async (req, res) => {
   }
 }
 
-export const getdogById = async (req, res) => {
+export const getDogById = async (req, res) => {
   try {
     const result = await dogs.findById(req.params.id)
     if (result) {

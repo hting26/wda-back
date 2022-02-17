@@ -11,7 +11,7 @@ const dogSchema = new mongoose.Schema({
   image: {
     type: String
   },
-  status: {
+  sell: {
     type: Boolean,
     default: true
   }
