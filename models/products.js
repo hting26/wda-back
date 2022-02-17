@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, '品名']
+    required: [true, '品名不能為空']
   },
   price: {
     type: Number,
@@ -18,8 +18,7 @@ const productSchema = new mongoose.Schema({
   },
   sell: {
     type: Boolean,
-    default: true,
-    required: [true, '必須有商品價格']
+    default: true
   },
   category: {
     type: String,
