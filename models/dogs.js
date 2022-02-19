@@ -6,7 +6,8 @@ const dogSchema = new mongoose.Schema({
     required: [true, '必須有名字']
   },
   description: {
-    type: String
+    type: String,
+    required: [true, '必須有說明']
   },
   image: {
     type: String
