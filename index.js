@@ -6,6 +6,7 @@ import usersRouter from './routes/users.js'
 import productsRouter from './routes/products.js'
 import ordersRouter from './routes/orders.js'
 import dogsRouter from './routes/dogs.js'
+import adoptionsRouter from './routes/adoptions.js'
 
 mongoose.connect(process.env.DB_URL, () => {
   console.log('MongoDB Connected')
@@ -15,7 +16,7 @@ const app = express()
 
 app.use(cors({
   origin (origin, callback) {
-    if (origin === undefined || origin.includes('github') || origin.includes('localhost')) {
+    if (origin === undefined || origin.includes('github') || origin.includes('localhost') || origin.includes('192.168')) {
       callback(null, true)
     } else {
       callback(new Error('Not allowed'), false)
@@ -35,6 +36,7 @@ app.use('/users', usersRouter)
 app.use('/products', productsRouter)
 app.use('/orders', ordersRouter)
 app.use('/dogs', dogsRouter)
+app.use('/adoptions', adoptionsRouter)
 
 app.all('*', (req, res) => {
   res.status(404).send({ success: false, message: '找不到' })

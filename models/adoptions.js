@@ -5,18 +5,19 @@ const adoptionSchema = new mongoose.Schema({
     type: mongoose.ObjectId,
     ref: 'users'
   },
-  dogs: {
-    type: [
-      {
-        dog: {
-          type: mongoose.ObjectId,
-          ref: 'dogs',
-          required: [true, '缺少 ID']
-        }
-      }
-    ]
+  dog: {
+    type: mongoose.ObjectId,
+    ref: 'dogs'
   },
-  form: {},
+  description: {
+    type: String
+  },
+  name: {
+    type: String
+  },
+  phone: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now
