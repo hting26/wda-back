@@ -3,7 +3,7 @@ import adoptions from '../models/adoptions.js'
 export const submitApply = async (req, res) => {
   console.log(req)
   try {
-    const result = await adoptions.create({ userId: req.user._id, description: req.body.description, name: req.body.name, phone: req.body.phone, date: req.body.date, dog: req.body.dog })
+    const result = await adoptions.create({ user: req.user._id, description: req.body.description, name: req.body.name, phone: req.body.phone, date: req.body.date, dog: req.body.dog })
     await req.user.save()
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {

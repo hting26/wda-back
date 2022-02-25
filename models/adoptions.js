@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const adoptionSchema = new mongoose.Schema({
-  userId: {
+  user: {
     type: mongoose.ObjectId,
     ref: 'users'
   },
