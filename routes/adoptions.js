@@ -6,7 +6,8 @@ import admin from '../middleware/admin.js'
 import {
   submitApply,
   getMyAdoptions,
-  getAllAdoptions
+  getAllAdoptions,
+  deleteAdoptionById
 } from '../controllers/adoptions.js'
 
 const router = express.Router()
@@ -14,5 +15,6 @@ const router = express.Router()
 router.post('/', auth, content('application/json'), submitApply)
 router.get('/me', auth, getMyAdoptions)
 router.get('/all', auth, admin, getAllAdoptions)
+router.delete('/:id', auth, admin, deleteAdoptionById)
 
 export default router
