@@ -20,6 +20,15 @@ const orderSchema = new mongoose.Schema({
       }
     ]
   },
+  name: {
+    type: String
+  },
+  phone: {
+    type: String
+  },
+  info: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now
