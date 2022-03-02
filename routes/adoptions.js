@@ -7,7 +7,8 @@ import {
   submitApply,
   getMyAdoptions,
   getAllAdoptions,
-  deleteAdoptionById
+  deleteAdoptionById,
+  editAdoptionById
 } from '../controllers/adoptions.js'
 
 const router = express.Router()
@@ -16,5 +17,6 @@ router.post('/', auth, content('application/json'), submitApply)
 router.get('/me', auth, getMyAdoptions)
 router.get('/all', auth, admin, getAllAdoptions)
 router.delete('/:id', auth, admin, deleteAdoptionById)
+router.patch('/:id', auth, admin, editAdoptionById)
 
 export default router

@@ -18,6 +18,9 @@ const adoptionSchema = new mongoose.Schema({
   phone: {
     type: String
   },
+  status: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now
